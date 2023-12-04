@@ -4,8 +4,18 @@ import Home from '../../screens/home/Home';
 import Notification from '../../screens/notification/Notification';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomTab from '../bottom-tab/BottomTab';
+import Contact from '../../screens/contact/Contact';
 
 const Stack = createStackNavigator();
+
+const UserNavigation = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name='contact' component={Contact}/>
+        </Stack.Navigator>
+    )
+}
+
 
 const StackNav = () => {
     return (
@@ -14,7 +24,7 @@ const StackNav = () => {
                 headerShown: false
             }}
         >
-            <Stack.Screen name="home" component={BottomTab} />
+            <Stack.Screen name="botton-tab" component={BottomTab} />
             <Stack.Screen name="notification" component={Notification} />
 
         </Stack.Navigator>
