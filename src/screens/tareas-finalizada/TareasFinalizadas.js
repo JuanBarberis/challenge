@@ -10,7 +10,6 @@ const TareasFinalizadas = () => {
     <View>
       <Text>TareasFinalizadas</Text>
       <Text onPress={()=> navigation.navigate('notification')}>ir a notificaciones</Text>
-
     </View>
   )
 }
