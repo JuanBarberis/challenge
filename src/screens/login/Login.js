@@ -25,7 +25,7 @@ const Login = () => {
         space={5}
       >
         <VStack
-        mt={10}
+          mt={10}
         >
           <FormControl>
             <FormControl.Label>Nombre</FormControl.Label>
@@ -49,13 +49,14 @@ const Login = () => {
 
         <Button
           onPress={handleLogin}
-          bgColor={'orange.400'}
+          bgColor={'yellow.400'}
           w={'90%'}
+          isDisabled={data.nombre !== "" && data.email !== "" ? false : true}
         >
           Login
         </Button>
       </VStack>
-    </View>
+    </View >
   )
 }
 

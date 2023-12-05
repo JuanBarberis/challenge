@@ -24,12 +24,12 @@ const CustomBottom = (props) => {
                 <CustomIcon
                     name={'briefcase'}
                     size={'xl'}
-                    color={isFocus === 'tareas-Finalizadas' ? 'orange.500' : 'grey'}
+                    color={isFocus === 'tareas-Finalizadas' ? 'yellow.500' : 'grey'}
                 />
                 <RenderText
                     text={'Finalizada'}
                     size={'md'}
-                    color={isFocus === 'tareas-Finalizadas' ? 'orange.500' : 'grey'}
+                    color={isFocus === 'tareas-Finalizadas' ? 'yellow.500' : 'grey'}
 
                 />
             </TouchableOpacity>
@@ -37,13 +37,13 @@ const CustomBottom = (props) => {
                 <CustomIcon
                     name={'home'}
                     size={'xl'}
-                    color={isFocus === 'Home' ? 'orange.500' : 'grey'}
+                    color={isFocus === 'Home' ? 'yellow.500' : 'grey'}
 
                 />
                 <RenderText
                     text={'Home'}
                     size={'md'}
-                    color={isFocus === 'Home' ? 'orange.500' : 'grey'}
+                    color={isFocus === 'Home' ? 'yellow.500' : 'grey'}
 
                 />
             </TouchableOpacity>
@@ -51,13 +51,13 @@ const CustomBottom = (props) => {
                 <CustomIcon
                     name={'folder'}
                     size={'xl'}
-                    color={isFocus === 'tareas-Pendientes' ? 'orange.500' : 'grey'}
+                    color={isFocus === 'tareas-Pendientes' ? 'yellow.500' : 'grey'}
 
                 />
                 <RenderText
                     text={'Pendientes'}
                     size={'md'}
-                    color={isFocus === 'tareas-Pendientes' ? 'orange.500' : 'grey'}
+                    color={isFocus === 'tareas-Pendientes' ? 'yellow.500' : 'grey'}
 
                 />
             </TouchableOpacity>
