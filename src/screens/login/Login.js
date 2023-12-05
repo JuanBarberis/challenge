@@ -15,7 +15,7 @@ const Login = () => {
   console.log(data)
 
   const handleLogin = () => {
-    dispatch(logUser({ state: true, name: data.nombre, email: data.email, photo: null }))
+    dispatch(logUser({ state: true, name: data.nombre, email: data.email }))
   }
 
   return (
@@ -31,9 +31,11 @@ const Login = () => {
             <FormControl.Label>Nombre</FormControl.Label>
             <Input
               w={'90%'}
-              placeholder='ingrese su nombre'
-              placeholderTextColor={'red.400'}
+              placeholder="ingrese su nombre"
+              size={'lg'}
+              placeholderTextColor={'grey'}
               value={data.nombre}
+
               onChangeText={(text) => setData({ ...data, nombre: text })}
             />
             <FormControl.Label>Email</FormControl.Label>
@@ -41,8 +43,10 @@ const Login = () => {
               value={data.email}
               onChangeText={(text) => setData({ ...data, email: text })}
               w={'90%'}
+              type='mail'
+              size={'lg'}
               placeholder='ingrese su email'
-              placeholderTextColor={'red.400'}
+              placeholderTextColor={'grey'}
             />
           </FormControl>
         </VStack>
