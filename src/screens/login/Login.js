@@ -12,7 +12,6 @@ const Login = () => {
     email: '',
   })
 
-  console.log(data)
 
   const handleLogin = () => {
     dispatch(logUser({ state: true, name: data.nombre, email: data.email }))
