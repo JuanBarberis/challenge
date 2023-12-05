@@ -4,14 +4,17 @@ import Home from '../../screens/home/Home';
 import Notification from '../../screens/notification/Notification';
 import { createStackNavigator } from '@react-navigation/stack';
 import BottomTab from '../bottom-tab/BottomTab';
-import Contact from '../../screens/contact/Contact';
+import Login from '../../screens/login/Login';
 
 const Stack = createStackNavigator();
 
 const UserNavigation = () => {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name='contact' component={Contact}/>
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}>
+            <Stack.Screen name='login' component={Login} />
         </Stack.Navigator>
     )
 }
@@ -31,4 +34,4 @@ const StackNav = () => {
     )
 }
 
-export default StackNav
+export { StackNav, UserNavigation }

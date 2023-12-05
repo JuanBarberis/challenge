@@ -4,12 +4,12 @@ import { useNavigation } from "@react-navigation/native"
 
 const Notification = () => {
 
-    const navigation = useNavigation()
+  const navigation = useNavigation()
   return (
     <View>
       <Text>Notification</Text>
-      <Text 
-      onPress={()=> navigation.navigate('home')}
+      <Text
+        onPress={() => navigation.navigate('Home')}
       >volver a home</Text>
 
     </View>

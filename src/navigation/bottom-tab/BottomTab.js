@@ -28,19 +28,15 @@ const BottomTab = () => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      tabBar={props=> <CustomBottom {...props}/>}
+      tabBar={props => <CustomBottom {...props} />}
       screenOptions={{
-        headerShown: false, 
-    }}
+        headerShown: false,
+      }}
     >
       {
-        tabSreens.map((item, index) => {
-          return (
-            <>
-              <Tab.Screen key={index} name={item.name} component={item.component} />
-            </>
-          )
-        }
+        tabSreens.map((item, index) => (
+          <Tab.Screen key={index} name={item.name} component={item.component} />
+        )
         )}
     </Tab.Navigator>
   )
