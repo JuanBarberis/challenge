@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     box: {
         padding: 3,
         borderWidth: 0.5,
-        borderRadius: 10,
+        borderRadius: 5,
         borderColor: 'grey',
         width: '95%',
         alignSelf: 'center',
