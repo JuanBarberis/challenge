@@ -14,12 +14,11 @@ const NuevaTarea = () => {
     const [tarea, setTarea] = useState({
         titulo: '',
         descripcion: '',
-
+        estado: false,
     })
     const task = useSelector(state => state.tareas.tareas)
 
     const buscarPorNombre = () => {
-        console.log('hola')
         for (let i in task) {
             if (task[i].titulo.toLowerCase() === tarea.titulo.toLowerCase()) {
                 setError("Este nombre ya existe")

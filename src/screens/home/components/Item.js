@@ -1,20 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Checkbox, HStack, Text, VStack, View } from 'native-base'
 import RenderText from '../../../components/renderText/RenderText'
 import { StyleSheet } from "react-native"
+import { useDispatch } from 'react-redux'
+import { modificarEstado } from '../../../store/tareas/TareaSlice'
 
 
 const Item = ({ item }) => {
 
-    const [checked, setChecked] = useState(false)
+    const dispatch = useDispatch()
+    const [checked, setChecked] = useState(item.estado)
     
+    useEffect(() => {
+        // Actualizar el estado de completitud en Redux cuando cambia el estado local
+        dispatch(modificarEstado({ titulo: item.titulo, estado: checked }));
+    }, [checked]);
     return (
         <View style={styles.box}>
             <HStack alignItems={'center'} space={3} ml={3}>
                 <Checkbox
                     aria-label="Seleccionar elemento"
                     colorScheme={'yellow'}
-                    onChange={() => setChecked(!checked)}
+                    onChange={() => { setChecked(!checked) }}
                 />
                 <VStack >
                     <RenderText

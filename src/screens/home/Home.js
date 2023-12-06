@@ -18,10 +18,7 @@ const Home = () => {
     const dispatch = useDispatch()
 
     //Variables
-    const [data, setData] = useState({
-        titulo: '',
-        descripción: '',
-    })
+
     const [open, setOpen] = useState(false)
 
 
@@ -33,15 +30,14 @@ const Home = () => {
         <>
             <View h={'100%'} justifyContent={'space-between'} >
                 <VStack alignItems={'center'} mt={5}>
-                    <RenderText size={'xl'} text={`BIENVENIDO ${user.name.toUpperCase()}`}/>
+                    <RenderText size={'xl'} text={`BIENVENIDO ${user.name.toUpperCase()}`} />
                 </VStack>
                 <FlatList data={tareas} renderItem={({ item, index }) => (
                     <Item
                         key={index}
                         item={item}
                     />
-                )}
-                />
+                )} />
                 <View
                     position={'absolute'}
                     bottom={7}
@@ -64,34 +60,6 @@ const Home = () => {
                 </TouchableOpacity>
             </View>
 
-            <CustomModal
-                isOpen={open}
-                onClose={() => setOpen(false)}
-            >
-                <VStack p={5}>
-                    <FormControl>
-                        <FormControl.Label>Titulo</FormControl.Label>
-                        <Input
-                            w={'90%'}
-                            placeholder="ingrese titulo"
-                            size={'lg'}
-                            placeholderTextColor={'grey'}
-                            value={data.titulo}
-                            onChangeText={(text) => setData({ ...data, titulo: text })}
-                        />
-                        <FormControl.Label>Descripcion</FormControl.Label>
-                        <Input
-                            value={data.descripción}
-                            onChangeText={(text) => setData({ ...data, descripción: text })}
-                            w={'90%'}
-                            type='mail'
-                            size={'lg'}
-                            placeholder='descripcion de la tarea'
-                            placeholderTextColor={'grey'}
-                        />
-                    </FormControl>
-                </VStack>
-            </CustomModal>
         </>
 
     )

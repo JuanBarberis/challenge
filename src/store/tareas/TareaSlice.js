@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     tareas: [],
     borradas: [],
+    tareasCompletadas: [],
 }
 
 export const tareaSlice = createSlice({
@@ -12,11 +13,31 @@ export const tareaSlice = createSlice({
         agregarTarea: (state, action) => {
             state.tareas = [...state.tareas, action.payload]
         },
+        // modificarEstado: (state, action) => {
+        //     const tareaNombre = action.payload.nombre;
+        //     const tareaEncontrada = state.tareas.find(tarea => tarea.nombre.toLowerCase() === tareaNombre.toLowerCase());
+        //     if (tareaEncontrada) {
+        //         tareaEncontrada.estado = action.payload.estado;
+        //     }
+        // },
         modificarEstado: (state, action) => {
-            const tareaNombre = action.payload.nombre;
-            const tareaEncontrada = state.tareas.find(tarea => tarea.nombre.toLowerCase() === tareaNombre.toLowerCase());
+            const tareaNombre = action.payload.titulo;
+            const tareaEncontrada = state.tareas.find(
+                (tarea) => tarea.titulo.toLowerCase() === tareaNombre.toLowerCase()
+            );
+
             if (tareaEncontrada) {
                 tareaEncontrada.estado = action.payload.estado;
+
+                // Si la tarea está completada, añádela a tareasCompletadas
+                if (action.payload.estado === true) {
+                    state.tareasCompletadas = [...state.tareasCompletadas, tareaEncontrada];
+                } else {
+                    // Si la tarea ya no está completada, quítala de tareasCompletadas
+                    state.tareasCompletadas = state.tareasCompletadas.filter(
+                        (tarea) => tarea.titulo.toLowerCase() !== tareaNombre.toLowerCase()
+                    );
+                }
             }
         },
         borrarTarea: (state, action) => {
