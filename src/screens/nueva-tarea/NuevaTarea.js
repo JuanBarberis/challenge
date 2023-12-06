@@ -10,6 +10,8 @@ const NuevaTarea = () => {
     const [tarea, setTarea] = useState({
         titulo: '',
         descripcion: '',
+        hora: '',
+        fecha: '',
     })
 
 
@@ -41,7 +43,6 @@ const NuevaTarea = () => {
                 alignSelf={'center'}
                 space={5}
             >
-
 
                 <Input
                     placeholder='Titulo de la tarea'
