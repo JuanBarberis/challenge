@@ -32,8 +32,8 @@ const Home = () => {
     return (
         <>
             <View h={'100%'} justifyContent={'space-between'} >
-                <VStack alignItems={'center'}>
-                    <RenderText text={`BIENVENIDO ${user.name.toUpperCase()}`}/>
+                <VStack alignItems={'center'} mt={5}>
+                    <RenderText size={'xl'} text={`BIENVENIDO ${user.name.toUpperCase()}`}/>
                 </VStack>
                 <FlatList data={tareas} renderItem={({ item, index }) => (
                     <Item
