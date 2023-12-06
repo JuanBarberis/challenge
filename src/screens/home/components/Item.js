@@ -39,9 +39,10 @@ export default Item
 const styles = StyleSheet.create({
     box: {
         padding: 3,
-        borderWidth: 1,
-        borderRadius: 5,
-        width: '98%',
+        borderWidth: 0.5,
+        borderRadius: 10,
+        borderColor: 'grey',
+        width: '95%',
         alignSelf: 'center',
         backgroundColor: 'white',
         marginTop: 10,
