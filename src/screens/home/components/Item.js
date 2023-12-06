@@ -7,7 +7,7 @@ import { StyleSheet } from "react-native"
 const Item = ({ item }) => {
 
     const [checked, setChecked] = useState(false)
-    console.log(checked)
+    
     return (
         <View style={styles.box}>
             <HStack alignItems={'center'} space={3} ml={3}>
