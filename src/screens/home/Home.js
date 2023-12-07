@@ -38,6 +38,7 @@ const Home = () => {
                         item={item}
                     />
                 )} />
+
                 <View
                     position={'absolute'}
                     bottom={7}
