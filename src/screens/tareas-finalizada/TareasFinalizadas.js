@@ -6,10 +6,9 @@ import Item from '../home/components/Item'
 import RenderText from '../../components/renderText/RenderText'
 
 const TareasFinalizadas = () => {
+  
   const tareasCompletadas = useSelector(state => state.tareas.tareasCompletadas)
   const navigation = useNavigation()
-
-  console.log(tareasCompletadas)
 
   return (
     <View h={'100%'} >
