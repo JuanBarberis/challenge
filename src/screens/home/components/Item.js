@@ -31,7 +31,7 @@ const Item = ({ item, isCompletedView }) => {
         }
     }, [checked]);
 
-
+console.log(checked)
     return (
         <View style={styles.box}>
             <HStack alignItems={'center'} space={3} ml={3}>

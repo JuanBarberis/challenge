@@ -22,12 +22,6 @@ const Home = () => {
     const [open, setOpen] = useState(false)
 
 
-    const handleLogOut = () => {
-        dispatch(signOut({ state: false }))
-    }
-
-    useEffect(() => { }, [tareas])
-
     return (
         <>
             <View h={'100%'} justifyContent={'space-between'} >
@@ -58,9 +52,7 @@ const Home = () => {
                         callback={() => navigation.navigate('nueva-tarea')}
                     />
                 </View>
-                <TouchableOpacity onPress={handleLogOut}>
-                    <RenderText text={"Cerrar Sesión"} />
-                </TouchableOpacity>
+              
             </View>
 
         </>

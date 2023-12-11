@@ -6,10 +6,8 @@ import Item from '../home/components/Item'
 
 const TareasPendientes = () => {
 
-  const tareas = useSelector(state => state.tareas.tareas)
-  const tareasPendientes = tareas.filter((tarea) => tarea.estado === false)
+  const tareasPendientes = useSelector((state) => state.tareas.tareas.filter((tarea) => tarea.estado === false))
 
-  useEffect(() => { }, [tareasPendientes])
   return (
     <View h={'100%'} >
       <VStack h={'10%'} bgColor={'yellow.400'} alignItems={'center'} justifyContent={'center'}>

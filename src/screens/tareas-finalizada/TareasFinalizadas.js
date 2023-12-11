@@ -7,10 +7,8 @@ import RenderText from '../../components/renderText/RenderText'
 
 const TareasFinalizadas = () => {
 
-  const tareas = useSelector(state => state.tareas.tareas)
-  const tareasCompletadas = tareas.filter((tarea) => tarea.estado === true)
-  const navigation = useNavigation()
-
+  const tareasCompletadas = useSelector((state) => state.tareas.tareas.filter((tarea) => tarea.estado === true));
+  
   return (
     <View h={'100%'} >
       <VStack h={'10%'} bgColor={'yellow.400'} alignItems={'center'} justifyContent={'center'}>
