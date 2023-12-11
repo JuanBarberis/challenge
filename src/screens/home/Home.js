@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigation } from "@react-navigation/native"
 import { Button, FlatList, FormControl, Input, Text, VStack, View } from 'native-base'
 import RenderText from '../../components/renderText/RenderText'
@@ -25,6 +25,8 @@ const Home = () => {
     const handleLogOut = () => {
         dispatch(signOut({ state: false }))
     }
+
+    useEffect(() => { }, [tareas])
 
     return (
         <>

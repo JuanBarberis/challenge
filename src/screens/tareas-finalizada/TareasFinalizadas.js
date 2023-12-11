@@ -6,8 +6,9 @@ import Item from '../home/components/Item'
 import RenderText from '../../components/renderText/RenderText'
 
 const TareasFinalizadas = () => {
-  
-  const tareasCompletadas = useSelector(state => state.tareas.tareasCompletadas)
+
+  const tareas = useSelector(state => state.tareas.tareas)
+  const tareasCompletadas = tareas.filter((tarea) => tarea.estado === true)
   const navigation = useNavigation()
 
   return (

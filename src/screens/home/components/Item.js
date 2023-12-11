@@ -7,12 +7,11 @@ import { modificarEstado } from '../../../store/tareas/TareaSlice'
 
 
 const Item = ({ item, isCompletedView }) => {
-    console.log(item, 'copleted')
+
     const dispatch = useDispatch()
     const tareasCompletadas = useSelector((state) => state.tareas.tareasCompletadas);
 
     // Verificar si la tarea está completada
-    const isCompleted = tareasCompletadas.some((tarea) => tarea.titulo === item.titulo);
     const [checked, setChecked] = useState(item.estado)
 
     const handleCheckboxChange = () => {
